@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+	<head>
+
+        <title>ClockWorks</title>
+
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, target-densitydpi=device-dpi" />
+
+        <link type="text/css" rel="stylesheet" href="css/clockworks.css"/>
+
+        <script src="phonegap.js"></script> <!-- The phonegap engine -->
+<!-- Insert js plugins for phonegap here if needed -->
+        <script src="js/jquery-1.10.2.min.js"></script> <!-- Include JQuery Library -->
+        <script src="js/clockworks.js"></script> <!-- General clockworks js -->
+
+	</head>
+	<body>
+
+        <header>
+            <ul>
+                <li id="vorige"><span></span></li>
+                <li><h1 id="titletext">Clockworks</h1></li>
+                <li id="volgende"><span></span></li>
+            </ul>
+        </header>
+
+        <section id="clockworks">
+            <figure><img src="img/sprite.svg"/></figure>
+            <article>
+                <p>ClockWorks logo and possibly text comes here.<br/>Or directly show your favorite clockwork.</p>
+                <p>Swipe left or right to view the clockworks.</p>
+            </article>
+        </section>
+
+        <section id="photoupload">
+            <p>Dan komt hier de photopagina.</p>
+        </section>
+
+        <nav>
+            <ul>
+                <li id="photo"><span></span>Photo upload</li>
+                <li id="fast"><span></span>Fast run</li>
+                <li id="manual"><span></span>Manual run</li>
+                <li id="screen"><span></span>Full screen</li>
+                <li id="info"><span></span>Clock info</li>
+            </ul>
+        </nav>
+
+<!-- Insert clock scripts -->
+        <script src="ressence/ressence.js"></script>
+        <script src="decitime/decitime.js"></script>
+        <script src="continue/continue.js"></script>
+        <script src="pulse/pulse.js"></script>
+        <script src="pie/pie.js"></script>
+<!--
+        <script src="chained/chained.js"></script>
+        <script src="swissrail/swissrail.js"></script>
+-->
+    </body>
+</html>

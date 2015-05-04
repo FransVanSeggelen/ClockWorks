@@ -1,0 +1,138 @@
+*{
+	margin: 0px;
+	border: 0px;
+	padding:0px;
+    -webkit-tap-highlight-color:rgba(0,0,0,0); /* Remove grey background on tab items activation */
+    -webkit-tap-highlight-color:transparent;   /* For some Androids */
+    box-sizing:        border-box; /* Make objects height and width include the border */
+    -moz-box-sizing:   border-box;
+    -webkit-box-sizing:border-box;
+    font-family:'Helvetica Neue',Helvetica,sans-serif;
+    font-size:16px;
+    color:#ddd;
+    overflow:hidden;
+}
+
+html,body{ 
+	height:100%; 
+    width: 100%; 
+}
+body{
+    -webkit-touch-callout:none;    /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust:none; /* prevent webkit from resizing text to fit */
+    -webkit-user-select:none;      /* prevent copy paste; to allow, change 'none' to 'text' */
+    background-color:#000;
+}
+
+h1{
+    margin:12px auto;
+    color:#eee;
+    font-size:24px;
+}
+h2,h3{
+	font-size:20px;
+	margin:5px 0px;
+}
+
+/* Navbar ---------------------------------------------------------- */
+
+header{
+	position:relative;
+    width:100%;
+    height:44px;
+    z-index:1000;
+	border-bottom:1px solid #eee;
+}
+header ul{
+	list-style:none;
+	height:100%;
+}
+header li{ 
+    display:inline-block;
+    position:absolute;
+    left:30px;
+    right:30px;
+    height:100%; 
+    text-align:center; 
+}
+header li:first-child{
+	left:0px;
+	right:auto;
+}
+header li:last-child{
+	left:auto;
+	right:0px;
+}
+
+/* Sprite as background of al the 'buttons' ------------------------ */
+
+li span{
+	display:block;
+    width: 30px; height: 30px;
+    margin: 3px auto;
+    background: url("../img/sprite.svg") 0 0 no-repeat;
+    background-size: 210px 60px;
+}
+#volgende span {background-position: -30px 0;}
+#photo span    {background-position: -60px 0;}
+#fast span     {background-position: -90px 0;}
+#manual span   {background-position:-120px 0;}
+#screen span   {background-position:-150px 0;}
+#info span     {background-position:-180px 0;}
+#vorige span:active   {background-position:  -0px -30px;}
+#volgende span:active {background-position: -30px -30px;}
+#photo span:active    {background-position: -60px -30px;}
+#fast span:active     {background-position: -90px -30px;}
+#manual span:active   {background-position:-120px -30px;}
+#screen span:active   {background-position:-150px -30px;}
+#info span:active     {background-position:-180px -30px;}
+li:hover{color: #69BD45;}
+#clockworks img{width: 100%;}
+
+/* Tabbar ---------------------------------------------------------- */
+
+nav{ 
+    position:absolute; 
+    width:100%;
+    bottom:0px; 
+    height:49px; 
+    border-top:1px solid #eee; 
+    z-index:1000;
+}
+nav ul{
+    list-style:none; 
+    height:100%; 
+}
+nav li{
+    display:inline-block;
+    float:left;
+    height:100%;  
+	width:20%;
+    text-align:center;
+    font-size:12px;
+	border-right:1px solid #eee;
+}
+nav li:last-child{
+	border-right:0px solid;
+}
+
+/* Content --------------------------------------------------------- */
+
+section{ 
+    position:absolute;
+    width: 100%;
+    top: 44px; bottom:49px; left:0;
+    display: none;
+}
+#clockworks{display:block;}
+
+figure, article{
+    position:absolute;
+}
+figure {top:1%;bottom:1%;left:1%;right:51%;}
+article{top:1%;bottom:1%;left:51%;right:1%;}
+
+@media all and (orientation:portrait){
+    figure {top:1%;bottom:51%;left:1%;right:1%;}
+    article{top:51%;bottom:1%;left:1%;right:1%;}
+}

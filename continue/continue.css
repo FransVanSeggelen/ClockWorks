@@ -1,0 +1,41 @@
+/* Clock faces ----------------------------------------------------- */
+/* Ressence -------------------------------------------------------- */
+
+div{border:1px solid green;}
+#ressence{left:100%;}
+
+#sm_hours{
+	position:absolute;
+	top:20%;
+	left:20%;
+	height:60%;
+	width:60%;
+}
+#sm_minutes_div{
+	position:absolute;
+	top:7%;
+	left:20%;
+	height:60%;
+	width:60%;
+}
+#sm_minutes{
+	position:absolute;
+	top:0%;
+	left:0%;
+	height:100%;
+	width:100%;
+}
+#sm_seconds_div{
+	position:absolute;
+	top:-10%;
+	left:20%;
+	height:60%;
+	width:60%;
+}
+#sm_seconds{
+	position:absolute;
+	top:0%;
+	left:0%;
+	height:100%;
+	width:100%;
+}

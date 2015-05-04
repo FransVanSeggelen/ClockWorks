@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Hours" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1400px" height="1400px" viewBox="0 0 1400 1400" enable-background="new 0 0 1400 1400" xml:space="preserve">
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="700" y1="700" x2="700" y2="50"/>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="460" y1="700" x2="1379.6133" y2="700" gradientTransform="matrix(4.489659e-11 -1 1 4.489659e-11 0 1400)">
+	<stop  offset="0" style="stop-color:#A7A9AC"/>
+	<stop  offset="0.2395" style="stop-color:#B1B3B5"/>
+	<stop  offset="0.5779" style="stop-color:#B9BBBD"/>
+	<stop  offset="1" style="stop-color:#BCBEC0"/>
+</linearGradient>
+<path fill="url(#SVGID_1_)" d="M700,20.387c-16.239,0-29.418,13.072-29.604,29.268h-0.009l-10.384,849.857h0.01
+	C660.011,899.675,660,899.836,660,900c0,22.091,17.91,40,40,40s40-17.909,40-40c0-0.164-0.011-0.325-0.013-0.488h0.01
+	L729.613,49.671h-0.008C729.428,33.468,716.245,20.387,700,20.387z"/>
+</svg>
