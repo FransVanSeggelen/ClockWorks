@@ -1,3 +1,4 @@
+/*
 $(document).ready(function(){
 	// Make the clock's section with figure (the clockface) and article (the text)
 	newClock ='<figure>';
@@ -59,3 +60,4 @@ $(document).ready(function(){
 		document.getElementById("p_seconds").setAttribute("r",rSeconds.toString()+"%");
 	};
 });
+*/

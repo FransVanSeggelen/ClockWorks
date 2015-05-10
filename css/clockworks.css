@@ -1,45 +1,54 @@
 *{
-	margin: 0px;
-	border: 0px;
-	padding:0px;
-    -webkit-tap-highlight-color:rgba(0,0,0,0); /* Remove grey background on tab items activation */
-    -webkit-tap-highlight-color:transparent;   /* For some Androids */
-    box-sizing:        border-box; /* Make objects height and width include the border */
-    -moz-box-sizing:   border-box;
-    -webkit-box-sizing:border-box;
-    font-family:'Helvetica Neue',Helvetica,sans-serif;
-    font-size:16px;
-    color:#ddd;
-    overflow:hidden;
+	margin:       0;
+    border-width: 0;
+    border-style: none;
+	padding:      0;
+    font-family:  sans-serif;
+    font-size:    100%;
+    color:        #dddddd;
+    overflow:     hidden;
+            box-sizing:          border-box;    /* Make objects height and width include the border */
+    -webkit-box-sizing:          border-box;
+            user-select:         none;          /* prevent copy paste; to allow, change 'none' to 'text' */
+    -webkit-user-select:         none;
+            touch-callout:       none;          /* prevent callout to copy image, etc when tap to hold */
+    -webkit-touch-callout:       none;
+            user-drag:           none;          /* prevent elements from being dragged */
+    -webkit-user-drag:           none;
+            text-size-adjust:    none;          /* prevent webkit from resizing text to fit */
+    -webkit-text-size-adjust:    none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* Remove grey background on tab items activation */
+    -webkit-tap-highlight-color: transparent;   /* For some Androids */
 }
 
 html,body{ 
-	height:100%; 
-    width: 100%; 
+	height: 100%; 
+    width:  100%; 
 }
 body{
-    -webkit-touch-callout:none;    /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust:none; /* prevent webkit from resizing text to fit */
-    -webkit-user-select:none;      /* prevent copy paste; to allow, change 'none' to 'text' */
-    background-color:#000;
+    background-color: #000000;
 }
 
 h1{
-    margin:12px auto;
-    color:#eee;
-    font-size:24px;
+    margin:    0.1em auto;
+    color:     #eeeeee;
+    font-size: 1.5em;
 }
-h2,h3{
-	font-size:20px;
-	margin:5px 0px;
+h2{
+    font-size: 1.3em;
+    margin-bottom: 3%;
+}
+h3{
+    font-size: 1.1em;
+    margin-bottom: 3%;
 }
 
 /* Navbar ---------------------------------------------------------- */
 
 header{
 	position:relative;
-    width:100%;
-    height:44px;
+    width:  100%;
+    height: 2em;
     z-index:1000;
 	border-bottom:1px solid #eee;
 }
@@ -64,14 +73,14 @@ header li:last-child{
 	right:0px;
 }
 
-/* Sprite as background of al the 'buttons' ------------------------ */
+/* Sprite as background of all the 'buttons' ------------------------ */
 
 li span{
 	display:block;
-    width: 30px; height: 30px;
+    width: 2em; height: 2em;
     margin: 3px auto;
     background: url("../img/sprite.svg") 0 0 no-repeat;
-    background-size: 210px 60px;
+    background-size: 2em 2em;
 }
 #volgende span {background-position: -30px 0;}
 #photo span    {background-position: -60px 0;}
@@ -94,8 +103,8 @@ li:hover{color: #69BD45;}
 nav{ 
     position:absolute; 
     width:100%;
-    bottom:0px; 
-    height:49px; 
+    bottom:0; 
+    height:3em; 
     border-top:1px solid #eee; 
     z-index:1000;
 }
@@ -106,10 +115,10 @@ nav ul{
 nav li{
     display:inline-block;
     float:left;
-    height:100%;  
+    height:3em;  
 	width:20%;
     text-align:center;
-    font-size:12px;
+    font-size:0.75em;
 	border-right:1px solid #eee;
 }
 nav li:last-child{
@@ -119,20 +128,22 @@ nav li:last-child{
 /* Content --------------------------------------------------------- */
 
 section{ 
-    position:absolute;
-    width: 100%;
-    top: 44px; bottom:49px; left:0;
-    display: none;
+    position: absolute;
+    width:    100%;
+    top:      2em; bottom:3em; left:0;
+    display:  none;
+    padding:  0.5em;
 }
 #clockworks{display:block;}
 
 figure, article{
-    position:absolute;
+    position: absolute;
 }
-figure {top:1%;bottom:1%;left:1%;right:51%;}
-article{top:1%;bottom:1%;left:51%;right:1%;}
+article { overflow-y: auto }
+figure  { top: 0.5em; bottom:   0.5em; left: 0.5em; right:   51%; }
+article { top: 0.5em; bottom:   0.5em; left:   51%; right: 0.5em; }
 
 @media all and (orientation:portrait){
-    figure {top:1%;bottom:51%;left:1%;right:1%;}
-    article{top:51%;bottom:1%;left:1%;right:1%;}
+    figure  { top: 0.5em; bottom:   51%; left: 0.5em; right: 0.5em; }
+    article { top:   51%; bottom: 0.5em; left: 0.5em; right: 0.5em; }
 }

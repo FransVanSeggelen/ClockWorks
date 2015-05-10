@@ -1,141 +1,137 @@
 // Global time variables
-var systemDate=new Date();
+var clockWorks = [
+    'appiness'.
+    'captive'.
+    'continue'.
+    'dectime'.
+    'pie'.
+    'pulse'.
+    'ressence'.
+    'swissrail',
+    ''
+] //    all available clockworks
+var systemDate  = new Date();
 var clockTimer;
-var dateVar, miliVar, secondVar, minuteVar, hourVar, dayVar, yearVar, monthVar, weekVar;
-// For camera ---------------------------------------------------------
-var camOptions; // set all object elements including next 2 lines.
-var pictureSource;   // picture source
-var destinationType; // sets the format of returned value
-// End camera ---------------------------------------------------------
+var clockSteps  = {milli:0, second:0, minute:0, hour:0, weekday:0, day:0, month:0, year:0, week:0};
+var clockSmooth = {milli:0, second:0, minute:0, hour:0, weekday:0, day:0, month:0, year:0, week:0};
+var totalSteps  = {milli:0, second:0, minute:0, hour:0, weekday:0, day:0, month:0, year:0, week:0};
+var totalSmooth = {milli:0, second:0, minute:0, hour:0, weekday:0, day:0, month:0, year:0, week:0};
+var monthNames  = ['januari','februari','maart','april','mei','juni','juli','augustus','september','oktober','november','december'];
+var weekNames   = ['maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag','zondag'];
 
 $(document).ready(function(){
+
+    var clock = {
+        ticker   : 0,
+        name     : 'Appiness',
+        designer : 'Cis',
+        year     : 2015,
+        url      : 'http://www.appiness.nl',
+        html     : '<figure>'
+                        + '<div id="appiness">'
+                            + '<img id="appihour" src="clockworks/appiness/appihour.svg" />'
+                            + '<img id="appiminute" src="clockworks/appiness/appiminute.svg" />'
+                            + '<img id="appisecond" src="clockworks/appiness/appisecond.svg" />'
+                            + '<img id="appiface" src="clockworks/appiness/appiface.svg" />'
+                        + '</div>'
+                    + '</figure>'
+                    + '<article>'
+                        + '<h2>Appiness</h2>'
+                        + '<p>No special concept, just another clock, but with a appi face for some appiness.</p>'
+                    + '</article>',
+        tick     : function(){
+            // only the clock specific action per millisecond.
+            this.ticker = setInterval(function(){
+                $('#appisecond').css( 'transform', 'rotate(' + clockSteps.second * 6 + 'deg)' );
+                $('#appisecond').css( '-webkit-transform', 'rotate(' + clockSteps.second * 6 + 'deg)' );
+                $('#appiminute').css( 'transform', 'rotate(' + clockSteps.minute * 6 + 'deg)' );
+                $('#appiminute').css( '-webkit-transform', 'rotate(' + clockSteps.minute * 6 + 'deg)' );
+                $('#appihour').css( 'transform', 'rotate(' + clockSteps.hour * 30 + 'deg)' );
+                $('#appihour').css( '-webkit-transform', 'rotate(' + clockSteps.hour * 30 + 'deg)' );
+            },1);
+        },
+        stop     : function(){
+            clearInterval(this.ticker);
+            this.ticker=0;
+        },
+        fast     : function(){
+            // only the clock specific action per millisecond.
+        },
+        hand     : function(){
+            // only the clock specific action per millisecond.
+        }
+    };
+    document.getElementById('clockworks').innerHTML = clock.html;
+    elem=document.getElementById("appiness").getElementsByTagName("*");
+    for (var i = 0; i < elem.length; i++) {
+        elem[i].style.position="absolute";
+        elem[i].style.top     ="0px";
+        elem[i].style.left    ="0px";
+        elem[i].style.width   ="100%";
+        elem[i].style.height  ="100%";
+    };
+
     var clockTimer = setInterval(function(){setTimeVars()},1);
     //  clearInterval(clockTimer);  //  Use this when needed
-    // pictureSource=navigator.camera.PictureSourceType;
-    // destinationType=navigator.camera.DestinationType;
+   clock.tick();
 
-    $("#vorige").on("click", function() {
-        $("section").hide();
-        $("#clockworks").show();
-        $("#titletext").html("ClockWorks");
+//  --------------------------------------------------------------- The buttons
+    $('#vorige').on('click', function() {
+        $('section').hide();
+        $('#clockworks').show();
+        $('#titletext').html('ClockWorks');
     });
-    // $("#photo").on("click", function() {
-    //     $("section").hide();
-    //     $("#photoupload").show();
-    //     $("#titletext").html("Photo Upload");
+    // $('#photo').on('click', function() {
+    //     $('section').hide();
+    //     $('#photoupload').show();
+    //     $('#titletext').html('Photo Upload');
     // });
-    $("#photo").on("click", function() {
-        $("section").hide();
-        $("#ressence").show();
-        $("#titletext").html("Photo Upload");
+    $('#photo').on('click', function() {
+        clock.ticker ? clock.stop() : clock.tick();
     });
-    $("#fast").on("click", function() {
-        $("section").hide();
-        $("#decitime").show();
-        $("#titletext").html("Ressence Type 3");
-        continueWatch();
+    $('#fast').on('click', function() {
+        $('section').hide();
+        $('#appitime').show();
+        $('#titletext').html('Stop ticking.');
     });
-    $("#manual").on("click", function() {
-        $("section").hide();
-        $("#continue").show();
-        $("#titletext").html("DeciTime (Cis)");
+    $('#manual').on('click', function() {
+        $('section').hide();
+        $('#continue').show();
+        $('#titletext').html('appiTime (Cis)');
     });
-    $("#screen").on("click", function() {
-        $("section").hide();
-        $("#pulse").show();
-        $("#titletext").html("Sander Mulder");
+    $('#screen').on('click', function() {
+        $('section').hide();
+        $('#pulse').show();
+        $('#titletext').html('Sander Mulder');
     });
-    $("#info").on("click", function() {
-        $("section").hide();
-        $("#pie").show();
-        $("#titletext").html("Pie &copy; Cis");
+    $('#info').on('click', function() {
+        $('section').hide();
+        $('#pie').show();
+        $('#titletext').html('Pie &copy; Cis');
     });
 });
 
-//  Set the time variables every millisecond
- 
+//  ---------------------------------- Set the time variables every millisecond
 function setTimeVars(){
     systemDate=new Date();
-    dateVar   =systemDate.getDate(); // 1-31
-    miliVar   =systemDate.getMilliseconds(); // 0-999
-    secondVar =systemDate.getSeconds(); // 0-59
-    minuteVar =systemDate.getMinutes(); // 0-59
-    hourVar   =systemDate.getHours(); // 0-23
-    dayVar    =systemDate.getDay(); // 0-6
-    if (dayVar==0) {dayVar=7};
-    yearVar   =systemDate.getFullYear(); // 0-99
-    monthVar  =systemDate.getMonth(); // 0-11
+    clockSteps.milli   = systemDate.getMilliseconds(); // 0-999
+    clockSteps.second  = systemDate.getSeconds();      // 0-59
+    clockSteps.minute  = systemDate.getMinutes();      // 0-59
+    clockSteps.hour    = systemDate.getHours();        // 0-23
+    clockSteps.day     = systemDate.getDate();         // 1-31
+    clockSteps.month   = systemDate.getMonth();        // 0-11
+    clockSteps.year    = systemDate.getFullYear();     // 0-99
+    clockSteps.weekday = systemDate.getDay();          // 0-6
+        if ( clockSteps.weekday == 0 ) { clockSteps.weekday = 7 };
         // some extra calculations to get the weeknr
-        var target = systemDate;
-        var dayNr = (dayVar + 6) % 7;
+        var target     = systemDate;
+        var dayNr      = (clockSteps.weekday + 6) % 7;
         target.setDate(target.getDate() - dayNr + 3);
-        var jan4 = new Date(target.getFullYear(), 0, 4);
-        var dayDiff = (target - jan4) / 86400000;
-    weekVar = 1 + Math.ceil(dayDiff / 7);
+        var jan4       = new Date(target.getFullYear(), 0, 4);
+        var dayDiff    = (target - jan4) / 86400000;
+    clockSteps.week    = 1 + Math.ceil(dayDiff / 7);   // 1-53
+
+    // var miliDate = new Date(systemDate);
+    // var daySeconds  =  systemDate - miliDate.setHours(0,0,0,0);
 };
-
-// For camera ---------------------------------------------------------
-// Called when a photo is successfully retrieved
-function onPhotoDataSuccess(imageData) {
-    // Uncomment to view the base64-encoded image data
-    // console.log(imageData);
-
-    // Get image handle
-    //
-    var smallImage = document.getElementById('smallImage');
-
-    // Unhide image elements
-    //
-    smallImage.style.display = 'block';
-
-    // Show the captured photo
-    // The inline CSS rules are used to resize the image
-    //
-    smallImage.src = "data:image/jpeg;base64," + imageData;
-}
-
-// Called when a photo is successfully retrieved
-function onPhotoURISuccess(imageURI) {
-    // Uncomment to view the image file URI
-    // console.log(imageURI);
-
-    // Get image handle
-    var largeImage = document.getElementById('largeImage');
-
-    // Unhide image elements
-    largeImage.style.display = 'block';
-
-    // Show the captured photo
-    // The inline CSS rules are used to resize the image
-    largeImage.src = imageURI;
-}
-
-// A button will call this function
-function capturePhoto() {
-    // Take picture using device camera and retrieve image as base64-encoded string
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
-        quality: 50, destinationType: destinationType.DATA_URL
-    });
-}
-
-// A button will call this function
-function capturePhotoEdit() {
-    // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
-        quality: 20, allowEdit: true, destinationType: destinationType.DATA_URL
-    });
-}
-
-// A button will call this function
-function getPhoto(source) {
-    // Retrieve image file location from specified source
-    navigator.camera.getPicture(onPhotoURISuccess, onFail, {
-        quality: 50, destinationType: destinationType.FILE_URI, sourceType: source
-    });
-}
-
-// Called if something bad happens
-function onFail(message) {
-    alert('Failed : ' + message);
-}
-// End camera ---------------------------------------------------------
+//  --------------------------------------------------------------- End of code
