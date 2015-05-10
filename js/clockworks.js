@@ -1,12 +1,12 @@
 // Global time variables
 var clockWorks = [
-    'appiness'.
-    'captive'.
-    'continue'.
-    'dectime'.
-    'pie'.
-    'pulse'.
-    'ressence'.
+    'appiness',
+    'captive',
+    'continue',
+    'dectime',
+    'pie',
+    'pulse',
+    'ressence',
     'swissrail',
     ''
 ] //    all available clockworks
