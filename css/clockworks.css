@@ -30,9 +30,12 @@ body{
 }
 
 h1{
-    margin:    0.1em auto;
+    position: relative;
+    top: -0.3em;
+    height: 2em;
     color:     #eeeeee;
     font-size: 1.5em;
+    text-align: center;
 }
 h2{
     font-size: 1.3em;
@@ -46,60 +49,12 @@ h3{
 /* Navbar ---------------------------------------------------------- */
 
 header{
-	position:relative;
+	position:fixed;
     width:  100%;
     height: 2em;
     z-index:1000;
 	border-bottom:1px solid #eee;
 }
-header ul{
-	list-style:none;
-	height:100%;
-}
-header li{ 
-    display:inline-block;
-    position:absolute;
-    left:30px;
-    right:30px;
-    height:100%; 
-    text-align:center; 
-}
-header li:first-child{
-	left:0px;
-	right:auto;
-}
-header li:last-child{
-	left:auto;
-	right:0px;
-}
-
-/* Sprite as background of all the 'buttons' ------------------------ */
-
-li span{
-	display:block;
-    width: 2em; height: 2em;
-    margin: 3px auto;
-    background: url("../img/sprite.svg") 0 0 no-repeat;
-    background-size: 2em 2em;
-}
-#volgende span {background-position: -30px 0;}
-#photo span    {background-position: -60px 0;}
-#fast span     {background-position: -90px 0;}
-#manual span   {background-position:-120px 0;}
-#screen span   {background-position:-150px 0;}
-#info span     {background-position:-180px 0;}
-#vorige span:active   {background-position:  -0px -30px;}
-#volgende span:active {background-position: -30px -30px;}
-#photo span:active    {background-position: -60px -30px;}
-#fast span:active     {background-position: -90px -30px;}
-#manual span:active   {background-position:-120px -30px;}
-#screen span:active   {background-position:-150px -30px;}
-#info span:active     {background-position:-180px -30px;}
-li:hover{color: #69BD45;}
-/* #clockworks img{width: 100%;} */
-
-/* Tabbar ---------------------------------------------------------- */
-
 nav{ 
     position:absolute; 
     width:100%;
@@ -108,21 +63,55 @@ nav{
     border-top:1px solid #eee; 
     z-index:1000;
 }
-nav ul{
-    list-style:none; 
-    height:100%; 
+button{
+    display:             block;
+    position:            absolute;
+    height:              2em;
+    width:               2em;
+    background-size:     2em;
+    background-position: center;
+    background-repeat:   no-repeat;
+    background-color:    #000000;
 }
-nav li{
-    display:inline-block;
-    float:left;
-    height:3em;  
-	width:20%;
-    text-align:center;
-    font-size:0.75em;
-	border-right:1px solid #eee;
+header button:first-child{
+	left:0.5em;
+	right:auto;
+    background-image:    url("../img/previous.svg");
 }
-nav li:last-child{
-	border-right:0px solid;
+header button:last-child{
+	left:auto;
+	right:0.5em;
+    background-image:    url("../img/next.svg");
+}
+nav button{
+    height: 3em;
+    width: 20%;
+    background-size: 3em;
+}
+#startstop{
+    left:    0%;
+    right:  20%;
+    background-image:    url("../img/start.svg");
+}
+#slowfast{
+    left:   20%;
+    right:  40%;
+    background-image:    url("../img/slow.svg");
+}
+#stepsmooth{
+    left:   40%;
+    right:  60%;
+    background-image:    url("../img/step.svg");
+}
+#manual{
+    left:   60%;
+    right:  80%;
+    background-image:    url("../img/manual.svg");
+}
+#credits{
+    left:   80%;
+    right: 100%;
+    background-image:    url("../img/credits.svg");
 }
 
 /* Content --------------------------------------------------------- */
@@ -130,20 +119,20 @@ nav li:last-child{
 section{ 
     position: absolute;
     width:    100%;
-    top:      2em; bottom:3em; left:0;
+    top:      0; bottom:3em; left:0;
     display:  none;
     padding:  0.5em;
 }
-#clockworks{display:block;}
+#clock0{display:block;}
 
 figure, article{
     position: absolute;
 }
 article { overflow-y: auto }
-figure  { top: 0.5em; bottom:   0.5em; left: 0.5em; right:   51%; }
-article { top: 0.5em; bottom:   0.5em; left:   51%; right: 0.5em; }
+figure  { top: 2.5em; bottom:   0.5em; left: 0.5em; right:   51%; }
+article { top: 2.5em; bottom:   0.5em; left:   51%; right: 0.5em; }
 
 @media all and (orientation:portrait){
-    figure  { top: 0.5em; bottom:   51%; left: 0.5em; right: 0.5em; }
+    figure  { top: 2.5em; bottom:   51%; left: 0.5em; right: 0.5em; }
     article { top:   51%; bottom: 0.5em; left: 0.5em; right: 0.5em; }
 }

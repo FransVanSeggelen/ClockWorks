@@ -1,21 +1,22 @@
 var appiness = {
-    ticker   : 0,
-    name     : 'Appiness',
-    designer : 'Cis',
-    year     : 2015,
-    url      : 'http://www.appiness.nl',
-    html     : '<figure>'
-                    + '<div id="appiness">'
-                        + '<img id="appihour" src="clockworks/appiness/appihour.svg" />'
-                        + '<img id="appiminute" src="clockworks/appiness/appiminute.svg" />'
-                        + '<img id="appisecond" src="clockworks/appiness/appisecond.svg" />'
-                        + '<img id="appiface" src="clockworks/appiness/appiface.svg" />'
-                    + '</div>'
-                + '</figure>'
-                + '<article>'
-                    + '<h2>Appiness</h2>'
-                    + '<p>No special concept, just another clock, but with a appi face for some appiness.</p>'
-                + '</article>',
+    ticker   :	0,
+    name     :	'Appiness',
+    designer :	'Cis',
+    year     :	2015,
+    url      :	'http://www.appiness.nl',
+    html     :	'<h1>Appiness</h1>'
+    			+	'<figure>'
+                    +	'<div id="appiness">'
+                        +	'<img id="appihour" src="clockworks/appiness/appihour.svg" />'
+                        +	'<img id="appiminute" src="clockworks/appiness/appiminute.svg" />'
+                        +	'<img id="appisecond" src="clockworks/appiness/appisecond.svg" />'
+                        +	'<img id="appiface" src="clockworks/appiness/appiface.svg" />'
+                    +	'</div>'
+                +	'</figure>'
+                +	'<article>'
+                    +	'<h2>Appiness</h2>'
+                    +	'<p>No special concept, just another clock, but with a appi face for some appiness.</p>'
+                +	'</article>',
     tick     : function(){
         // only the clock specific action per millisecond.
         this.ticker = setInterval(function(){
@@ -38,4 +39,5 @@ var appiness = {
         // only the clock specific action per millisecond.
     }
 };
-$('#clockworks').html(appiness.html);
+var clockID = clockWorks.indexOf("appiness");
+$('#clock'+clockID).html(appiness.html);

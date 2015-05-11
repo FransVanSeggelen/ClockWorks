@@ -23,7 +23,6 @@ $(document).ready(function(){
 	//  clearInterval(clockTimer);  //  Use this when needed
 
 	for(var key in clockWorks){
-// var key=0;
 		console.log('ClockWorks[' + key + '] = ' + clockWorks[key]);
 		var css = document.createElement('link');
 		css.setAttribute('rel', 'stylesheet');
@@ -32,6 +31,9 @@ $(document).ready(function(){
 		var js = document.createElement('script');
 		js.setAttribute('src', 'clockworks/' + clockWorks[key] + '/' + clockWorks[key] + '.js');
 		document.getElementsByTagName("head")[0].appendChild(js);
+		var html = document.createElement('section');
+		html.setAttribute('id', 'clock' + key);
+		document.getElementsByTagName("body")[0].appendChild(html);
 	}
 
 //  --------------------------------------------------------------- The buttons

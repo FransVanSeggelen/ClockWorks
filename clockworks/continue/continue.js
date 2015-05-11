@@ -1,24 +1,25 @@
 var continueSM = {
-	ticker   : 0,
-	name     : 'Continue',
-	designer : 'Sander Mulder',
-	year     : 2012,
-	url      : 'http://www.sandermulder.nl',
-	html     : '<figure>'
-				+ '<div id="sm_face">'
-					+ '<img id="sm_hours" src="clockworks/continue/continue_h.svg" />'
-					+ '<div id="sm_minutes_div">'
-						+ '<img id="sm_minutes" src="clockworks/continue/continue_m.svg" />'
-						+ '<div id="sm_seconds_div" >'
-							+ '<img id="sm_seconds" src="clockworks/continue/continue_s.svg" />'
-						+ '</div>'
-					+ '</div>'
-				+ '</div>'
-				+ '</figure>'
-				+ '<article>'
-					+ '<h2>Continue Time clock by Sander Mulder</h2>'
-					+ '<p>On this Continue Time clock, two out of the three pointers rotate around another pointer, instead of the central point on the clock face, as with traditional clocks. The resulting kinetic artwork, and fully functional clock, is continuously changing its shape while the pointers are still read as with any traditional clock.</p>'
-				+ '</article>',
+	ticker   :	0,
+	name     :	'Continue',
+	designer :	'Sander Mulder',
+	year     :	2012,
+	url      :	'http://www.sandermulder.nl',
+    html     :	'<h1>Continue</h1>'
+    			+	'<figure>'
+				+	'<div id="sm_face">'
+					+	'<img id="sm_hours" src="clockworks/continue/continue_h.svg" />'
+					+	'<div id="sm_minutes_div">'
+						+	'<img id="sm_minutes" src="clockworks/continue/continue_m.svg" />'
+						+	'<div id="sm_seconds_div" >'
+							+	'<img id="sm_seconds" src="clockworks/continue/continue_s.svg" />'
+						+	'</div>'
+					+	'</div>'
+				+	'</div>'
+				+	'</figure>'
+				+	'<article>'
+					+	'<h2>Continue Time clock by Sander Mulder</h2>'
+					+	'<p>On this Continue Time clock, two out of the three pointers rotate around another pointer, instead of the central point on the clock face, as with traditional clocks. The resulting kinetic artwork, and fully functional clock, is continuously changing its shape while the pointers are still read as with any traditional clock.</p>'
+				+	'</article>',
     tick     : function(){
         // only the clock specific action per millisecond.
 		w= document.getElementById("clockworks").firstChild.offsetWidth;
@@ -55,4 +56,5 @@ var continueSM = {
         // only the clock specific action per millisecond.
     }
 };
-$('#clockworks').html(continueSM.html);
+var clockID = clockWorks.indexOf("continue");
+$('#clock'+clockID).html(continueSM.html);
