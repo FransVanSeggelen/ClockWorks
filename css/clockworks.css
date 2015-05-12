@@ -120,10 +120,10 @@ section{
     position: absolute;
     width:    100%;
     top:      0; bottom:3em; left:0;
-    display:  none;
     padding:  0.5em;
 }
-#clock0{display:block;}
+.show { display:block; }
+.hide { display:none; }
 
 figure, article{
     position: absolute;

@@ -1,17 +1,17 @@
-var continueSM = {
+var continuetime = {
 	ticker   :	0,
-	name     :	'Continue',
+	name     :	'Continue Time',
 	designer :	'Sander Mulder',
 	year     :	2012,
 	url      :	'http://www.sandermulder.nl',
-    html     :	'<h1>Continue</h1>'
-    			+	'<figure>'
+    html     :	'<h1>Continue Time</h1>'
+    			+	'<figure id="sm_figure">'
 				+	'<div id="sm_face">'
-					+	'<img id="sm_hours" src="clockworks/continue/continue_h.svg" />'
+					+	'<img id="sm_hours" src="clockworks/continuetime/continuetime_h.svg" />'
 					+	'<div id="sm_minutes_div">'
-						+	'<img id="sm_minutes" src="clockworks/continue/continue_m.svg" />'
+						+	'<img id="sm_minutes" src="clockworks/continuetime/continuetime_m.svg" />'
 						+	'<div id="sm_seconds_div" >'
-							+	'<img id="sm_seconds" src="clockworks/continue/continue_s.svg" />'
+							+	'<img id="sm_seconds" src="clockworks/continuetime/continuetime_s.svg" />'
 						+	'</div>'
 					+	'</div>'
 				+	'</div>'
@@ -22,8 +22,8 @@ var continueSM = {
 				+	'</article>',
     tick     : function(){
         // only the clock specific action per millisecond.
-		w= document.getElementById("clockworks").firstChild.offsetWidth;
-		h= document.getElementById("clockworks").firstChild.offsetHeight;
+		w= $('#sm_figure').width();
+		h= $('#sm_figure').height();
 		wh=Math.min(w,h);
 		document.getElementById("sm_face").style.position ="absolute";
 		document.getElementById("sm_face").style.width =wh+"px";
@@ -32,7 +32,6 @@ var continueSM = {
 		document.getElementById("sm_face").style.top   =((h-wh)/2)+"px";
 
         this.ticker = setInterval(function(){
-
 			var hourDeg   =clockSteps.hour*360/12+clockSteps.minute*30/60+clockSteps.second*0.5/60+clockSteps.milli*(0.5/60)/1000;
 			var minuteDeg =clockSteps.minute*360/60+clockSteps.second*6/60+clockSteps.milli*0.1/1000-hourDeg;
 			var secondDeg =clockSteps.second*360/60+clockSteps.milli*6/1000-hourDeg-minuteDeg;
@@ -56,5 +55,5 @@ var continueSM = {
         // only the clock specific action per millisecond.
     }
 };
-var clockID = clockWorks.indexOf("continue");
-$('#clock'+clockID).html(continueSM.html);
+var clockID = clockWorks.indexOf("continuetime");
+$('#clock'+clockID).html(continuetime.html);
