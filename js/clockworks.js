@@ -6,8 +6,8 @@ var clockWorks = [
 	'dectime',
 	//	'pie',
 	//	'pulse',
-	//	'ressence',
-	//	'swissrail',
+	'ressence',
+	'swissrail',
 ]	//	all available clockworks
 var systemDate  = new Date();
 var clockTimer, clock, clockIndex;
@@ -64,9 +64,19 @@ $(document).ready(function(){
 	});
 	$('#startstop').on('click', function() {
 			// console.log('clockSelected');
+		$('#startstop').toggleClass('stopped');
+		$('#startstop').toggleClass('started');
 		clock.ticker ? clock.stop() : clock.tick();
 		// appiness.ticker ? appiness.stop() : appiness.tick();
 		// continuetime.ticker ? continuetime.stop() : continuetime.tick();
+	});
+	$('#slowfast').on('click', function() {
+		$('#slowfast').toggleClass('fasted');
+		$('#slowfast').toggleClass('slowed');
+	});
+	$('#stepsmooth').on('click', function() {
+		$('#stepsmooth').toggleClass('smoothed');
+		$('#stepsmooth').toggleClass('stepped');
 	});
 	//	Other buttons: photo upload, fast/normal, manual/auto, full/split screen, info/colofon/credits?
 

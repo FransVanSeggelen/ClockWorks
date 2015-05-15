@@ -91,17 +91,32 @@ nav button{
 #startstop{
     left:    0%;
     right:  20%;
+}
+.stopped{
     background-image:    url("../img/start.svg");
+}
+.started{
+    background-image:    url("../img/stop.svg");
 }
 #slowfast{
     left:   20%;
     right:  40%;
+}
+.fasted{
     background-image:    url("../img/slow.svg");
+}
+.slowed{
+    background-image:    url("../img/fast.svg");
 }
 #stepsmooth{
     left:   40%;
     right:  60%;
+}
+.smoothed{
     background-image:    url("../img/step.svg");
+}
+.stepped{
+    background-image:    url("../img/smooth.svg");
 }
 #manual{
     left:   60%;
