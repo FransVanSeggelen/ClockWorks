@@ -1,9 +1,9 @@
 //	----------------------------------------------------- Global time variables
 var clockWorks = [
 	'appiness',
-	//	'captive',
 	'continuetime',
 	'dectime',
+	'lifelong',
 	//	'pie',
 	//	'pulse',
 	'ressence',

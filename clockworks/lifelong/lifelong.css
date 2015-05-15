@@ -1,0 +1,15 @@
+#lifelong img{
+    position: absolute;
+    top:       0;
+    left:      0;
+    width:  100%;
+    height: 100%;
+}
+#lifelong svg{
+    position: absolute;
+    top:       0;
+    left:      0;
+    width:  100%;
+    height: 100%;
+}
+figure{overflow: visible;}
