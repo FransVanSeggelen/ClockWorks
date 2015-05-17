@@ -89,10 +89,10 @@ function setTimeVars(){
 	clockSteps.second  = systemDate.getSeconds();      // 0-59
 	clockSteps.minute  = systemDate.getMinutes();      // 0-59
 	clockSteps.hour    = systemDate.getHours();        // 0-23
-	clockSteps.day     = systemDate.getDate();         // 1-31
+	clockSteps.date    = systemDate.getDate();         // 1-31
 	clockSteps.month   = systemDate.getMonth();        // 0-11
 	clockSteps.year    = systemDate.getFullYear();     // 0-99
-	clockSteps.weekday = systemDate.getDay();          // 0-6
+	clockSteps.day     = systemDate.getDay();          // 0-6
 		if ( clockSteps.weekday == 0 ) { clockSteps.weekday = 7 };
 		//	some extra calculations to get the weeknr
 		var target     = systemDate;
