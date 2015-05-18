@@ -57,7 +57,7 @@ var lifelong = {
 						 + ' C ' + x[iMin] + ' ' + yLow
 						 +   ' ' + x[iMax] + ' ' + yLow
 						 +   ' ' + x[iMax] + ' ' + y[iMax]
-						 + '" stroke="#E6E7E8" stroke-width="1" fill="#000000" />';
+						 + '" stroke="#E6E7E8" stroke-width="2" fill="#000000" />';
 			$('#lifelong svg').html(path);
 			svgX = $('#lifelong svg').offset().left;
 			svgY = $('#lifelong svg').offset().top;
@@ -71,7 +71,7 @@ var lifelong = {
 							  + ' C ' + xDir    + ' ' + y[iMin]
 							  +   ' ' + x[iMax] + ' ' + yDir
 							  +   ' ' + x[iMax] + ' ' + y[iMax]
-							  + '" stroke="#E6E7E8" stroke-width="1" fill="#000000" />';
+							  + '" stroke="#E6E7E8" stroke-width="2" fill="#000000" />';
 			} else {
 				xDir = x[iMin] + ((x[iMid]-x[iMin])/10);
 				yDir = y[iMid] + ((y[iMid]-y[iMin])/10);
@@ -79,14 +79,14 @@ var lifelong = {
 							  + ' C ' + xDir    + ' ' + y[iMin]
 							  +   ' ' + x[iMid] + ' ' + yDir
 							  +   ' ' + x[iMid] + ' ' + y[iMid]
-							  + '" stroke="#E6E7E8" stroke-width="1" fill="#000000" />';
+							  + '" stroke="#E6E7E8" stroke-width="2" fill="#000000" />';
 				xDir = x[iMid] + ((x[iMax]-x[iMid])/10);
 				yDir = y[iMax] + ((y[iMax]-y[iMid])/10);
 				path += '<path d="M ' + x[iMid] + ' ' + y[iMid]
 							  + ' C ' + xDir    + ' ' + y[iMid]
 							  +   ' ' + x[iMax] + ' ' + yDir
 							  +   ' ' + x[iMax] + ' ' + y[iMax]
-							  + '" stroke="#E6E7E8" stroke-width="1" fill="#000000" />';
+							  + '" stroke="#E6E7E8" stroke-width="2" fill="#000000" />';
 			};
 			$('#lifelong svg').html(path);
 		},1);
